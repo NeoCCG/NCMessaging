@@ -4,7 +4,7 @@ Tool for quick display Alert, Action Sheet and Toast for iOS, and handle action 
 ## Easy way to use like
 
 
-###Alert
+### Alert
 ```
 NCMessaging.alert(message: String?, callback: ((Int) -> Void)?, buttons: String...)
 ```
@@ -12,14 +12,14 @@ NCMessaging.alert(message: String?, callback: ((Int) -> Void)?, buttons: String.
 NCMessaging.alert(title:String, message: String?, callback: ((Int) -> Void)?, buttons: String...)
 ```
 
-###Action Sheet
+### Action Sheet
 ```
 NCMessaging.actionSheet(callback:((Int) -> Void)?, cancel:String?, buttons:String...)
 ```
 ```
 NCMessaging.actionSheet(title:String?, callback:NCMessagingCallback?, cancel:String?, buttons:String...)
 ```
-###Toast
+### Toast
 ```
 NCMessaging.toast(message:String, callback:((Int) -> Void)?)
 ```

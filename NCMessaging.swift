@@ -99,7 +99,9 @@ extension _NCMessagingBOX {
                 }))
             }
             if let vc = topVC() {
-                vc.present(alert, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    vc.present(alert, animated: true, completion: nil)
+                }
             }
         }
         
@@ -112,7 +114,9 @@ extension _NCMessagingBOX {
                 for i in 0..<(btns ?? []).count {
                     alert.addButton(withTitle: btns![i])
                 }
-                alert.show()
+                DispatchQueue.main.async {
+                    alert.show()
+                }
                 vKeeper = self
             }
         case .actionSheet:
@@ -168,6 +172,7 @@ extension _NCMessagingBOX {
 
 extension _NCMessagingBOX: UIAlertViewDelegate {
     
+    @available(*, deprecated: 9.0, message: "Use UIAlertController")
     func alertView(_ alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
         callback?(buttonIndex)
         vKeeper = nil
@@ -177,6 +182,7 @@ extension _NCMessagingBOX: UIAlertViewDelegate {
 
 extension _NCMessagingBOX: UIActionSheetDelegate {
     
+    @available(*, deprecated: 8.3, message: "Use UIAlertController")
     func actionSheet(_ actionSheet: UIActionSheet, didDismissWithButtonIndex buttonIndex: Int) {
         callback?(buttonIndex)
         vKeeper = nil
